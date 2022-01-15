@@ -17,4 +17,4 @@ jobs:
         DOCKER_IMAGE=docker.pkg.github.com/bashkamen/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}:${GITHUB_REF##'/}
         docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
         docker build -f Dockerfile --pull -t $DOCKER_IMAGE .
-        docker push $DOCKER_IMAGE
+
