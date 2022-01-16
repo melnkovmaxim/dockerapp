@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build and push image
       run: |
-        DOCKER_NAME=dockerapp
-        DOCKER_IMAGE=docker.pkg.github.com/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}:${GITHUB_REF##'/}
+        DOCKER_NAME=dockerappsample
+        DOCKER_IMAGE=docker.pkg.github.com/melnkovmaxim/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}:${GITHUB_REF##'/}
         echo $DOCKER_IMAGE
         echo ${GITHUB_REPOSITORY##'/}
         echo ${GITHUB_REF##'/}
