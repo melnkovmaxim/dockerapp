@@ -14,7 +14,7 @@ jobs:
     - name: Build and push image
       run: |
         DOCKER_NAME=dockerappsample
-        DOCKER_IMAGE=docker.pkg.github.com/melnkovmaxim/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}:latest
+        DOCKER_IMAGE=docker.pkg.github.com/melnkovmaxim/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}:${GITHUB_REF##'/}
         echo $DOCKER_IMAGE
         echo ${GITHUB_REPOSITORY##'/}
         echo "ref"
