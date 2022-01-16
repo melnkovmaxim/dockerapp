@@ -14,7 +14,7 @@ jobs:
     - name: Build and push image
       run: |
         DOCKER_NAME=dockerapp
-        DOCKER_IMAGE=docker.pkg.github.com/melnkovmaxim/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}:${GITHUB_REF##'/}
+        DOCKER_IMAGE=docker.pkg.github.com/melnkovmaxim/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}
         docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
         docker build -f Dockerfile --pull -t $DOCKER_IMAGE .
         docker push $DOCKER_IMAGE
