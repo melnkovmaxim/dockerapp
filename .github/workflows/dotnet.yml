@@ -15,9 +15,11 @@ jobs:
       run: |
         DOCKER_NAME=dockerappsample
         DOCKER_IMAGE=docker.pkg.github.com/melnkovmaxim/${GITHUB_REPOSITORY##'/}/${DOCKER_NAME}:${GITHUB_REF##'/}
+        echo "docker_image"
         echo $DOCKER_IMAGE
+        echo "repository"
         echo ${GITHUB_REPOSITORY##'/}
-        echo "ref"
+        echo "github_ref"
         echo ${GITHUB_REF##'/}
         docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
         docker build -f Dockerfile --pull -t $DOCKER_IMAGE .
